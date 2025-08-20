@@ -1,0 +1,6 @@
+#ignoramos la carpeta __pycache__, venv y node_modules
+__pycache__/
+venv/
+node_modules/
+staticfiles/
+static/

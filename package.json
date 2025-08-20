@@ -1,0 +1,26 @@
+{
+  "name": "testdjango",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ui/index.tsx --bundle --platform=browser --outfile=static/js/index.js",
+    "server": "python manage.py runserver",
+    "dev": "nodemon --watch ui --ext ts,json,tsx --exec \" npm run build && clear && npm run server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/react-router-dom": "^5.3.3",
+    "clear-cli": "^2.0.0",
+    "esbuild": "^0.25.9",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.1"
+  }
+}
