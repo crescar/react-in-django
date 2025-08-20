@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild ui/index.tsx --bundle --platform=browser --outfile=static/js/index.js",
-    "server": "python manage.py runserver",
-    "dev": "nodemon --watch ui --ext ts,json,tsx --exec \" npm run build && clear && npm run server\""
+  "build": "esbuild ui/index.tsx --bundle --platform=browser --outfile=static/js/index.js",
+  "build:watch": "esbuild ui/index.tsx --bundle --platform=browser --outfile=static/js/index.js --watch",
+  "server": "nodemon --ext py --exec \"python manage.py runserver\"",
+  "livereload": "livereload static/ templates/ --wait 100",
+  "dev": "concurrently \"npm run build:watch\" \"npm run server\" \"npm run livereload\""
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +17,10 @@
     "@types/react-dom": "^19.1.7",
     "@types/react-router-dom": "^5.3.3",
     "clear-cli": "^2.0.0",
+    "concurrently": "^9.2.0",
+    "connect-livereload": "^0.6.1",
     "esbuild": "^0.25.9",
+    "livereload": "^0.10.3",
     "nodemon": "^3.1.10"
   },
   "dependencies": {

@@ -17,7 +17,7 @@ const CounterElement = () => {
     return (
         <>
         <h2>Counter: {count}</h2>
-        <button onClick={() => setCount(count + 1)}>Increment</button>
+        <button onClick={() => setCount(count + 1)}>Increment hot reload</button>
         <br />
         <NavLink to="/going-to-counter">Go to Going to Counter</NavLink>
         <br />
